@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>first</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <p>{{ foo }}</p>
+    <!-- 这里的 `foo` 不会更新！ -->
+    <button v-on:click="changeWord">Change it</button>
+
+    <table>
+        <tr>
+            <th v-for="header in headers">{{header}}</th>
+        </tr>
+        <tr v-for="order in orders" :key="order.orderId">
+            <td v-for="item in order">{{item}}</td>
+        </tr>
+    </table>
+</div>
+
+<script>
+    var obj = {
+        foo: 'bar',
+        headers: ['订单编号', '订单金额', '订单状态'],
+        orders: [
+            {orderId: '12345', orderAmt: 200, status: '060'},
+            {orderId: '12346', orderAmt: 201, status: '061'},
+            {orderId: '12347', orderAmt: 202, status: '062'}
+        ]
+    };
+
+    new Vue({
+        el: '#app',
+        data: obj,
+        methods: {
+            changeWord: function () {
+                obj.foo = Math.ceil(Math.random() * 10);
+            }
+        }
+    })
+</script>
+</body>
+</html>
