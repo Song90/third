@@ -15,10 +15,14 @@
                                     <span>管理员管理</span>
                                 </template>
                                 <el-menu-item index="1-1" :click="list_upBranch_manager">
-                                    <router-link to="/login">分公司管理员</router-link>
+                                    <router-link to="/upBranch_manager">分公司管理员</router-link>
                                 </el-menu-item>
-                                <el-menu-item index="1-2" :click="list_channel_manager">渠道方管理员</el-menu-item>
-                                <el-menu-item index="1-3" :click="list_enterprise_manager">开发商管理员</el-menu-item>
+                                <el-menu-item index="1-2">
+                                    <router-link to="/channel_manager">渠道方管理员</router-link>
+                                </el-menu-item>
+                                <el-menu-item index="1-3">
+                                    <router-link to="/enterprise_manager">开发商管理员</router-link>
+                                </el-menu-item>
                             </el-submenu>
                             <el-menu-item index="2">
                                 <i class="el-icon-menu"></i>
