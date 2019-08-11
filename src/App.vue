@@ -1,24 +1,34 @@
 <template>
     <div id="app">
-        <Props v-bind:datas="posts"></Props>
-        <Nav></Nav>
+        <Test1></Test1>
+        <!--        <Props v-bind:datas="posts"></Props>-->
+        <!--        <Nav></Nav>-->
         <!--        <hello4></hello4>-->
         <!--        <hello3></hello3>-->
         <!--        <hello2></hello2>-->
     </div>
-
 </template>
 
 <script>
+    // import Props from "@/components/Props";
+    // import Nav from "@/components/Nav";
 
-    import Props from "@/components/Props";
-    import Nav from "@/components/Nav";
-
+    import Test1 from "./components/Test1";
     export default {
         name: 'app',
-        components: {
-            Props,
-            Nav
+        components: {Test1},
+        // computed: {
+        //     username () {
+        //         // 我们很快就会看到 `params` 是什么
+        //         return this.$route.params.username
+        //     }
+        // },
+        methods: {
+            goBack () {
+                window.history.length > 1
+                    ? this.$router.go(-1)
+                    : this.$router.push('/')
+            }
         },
         data() {
             const item = {
@@ -57,48 +67,4 @@
 </script>
 
 <style>
-    /*.el-header {*/
-    /*    background-color: #B3C0D1;*/
-    /*    color: #333;*/
-    /*    line-height: 60px;*/
-    /*}*/
-
-    /*.el-aside {*/
-    /*    color: #333;*/
-    /*}*/
-
-    /*.el-row {*/
-    /*    margin-bottom: 20px;*/
-
-    /*&*/
-    /*:last-child {*/
-    /*    margin-bottom: 0;*/
-    /*}*/
-
-    /*}*/
-    /*.el-col {*/
-    /*    border-radius: 4px;*/
-    /*}*/
-
-    /*.bg-purple-dark {*/
-    /*    background: #99a9bf;*/
-    /*}*/
-
-    /*.bg-purple {*/
-    /*    background: #d3dce6;*/
-    /*}*/
-
-    /*.bg-purple-light {*/
-    /*    background: #e5e9f2;*/
-    /*}*/
-
-    /*.grid-content {*/
-    /*    border-radius: 4px;*/
-    /*    min-height: 36px;*/
-    /*}*/
-
-    /*.row-bg {*/
-    /*    padding: 10px 0;*/
-    /*    background-color: #f9fafc;*/
-    /*}*/
 </style>
