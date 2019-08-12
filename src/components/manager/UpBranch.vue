@@ -1,5 +1,5 @@
 <template>
-    <el-table :data="tableData" style="width: 100%">
+    <el-table :data="upBranch_managers" style="width: 100%">
         <el-table-column type="expand">
             <template slot-scope="props">
                 <el-form label-position="right" inline class="demo-table-expand" label-width="80px">
@@ -13,7 +13,7 @@
         </el-table-column>
         <el-table-column
                 label="分公司"
-                prop="desc">
+                prop="upBranch">
         </el-table-column>
         <el-table-column
                 label="登录名"
@@ -29,7 +29,17 @@
 
 <script>
     export default {
-        name: "UpBranch"
+        name: "UpBranch",
+        data() {
+            return {
+                upBranch_managers: [
+                    {id: 123, name: '张三', upBranch: '上海分公司'},
+                    {id: 123, name: '张三', upBranch: '上海分公司'},
+                    {id: 123, name: '张三', upBranch: '上海分公司'},
+                    {id: 123, name: '张三', upBranch: '上海分公司'}
+                ]
+            }
+        }
     }
 </script>
 
